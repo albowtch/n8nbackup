@@ -1,0 +1,32 @@
+PERFECTO! Ya funciona el respaldo completo automático.
+
+Tienes en GitHub:
+
+✅ config/ - Tu clave de encriptación
+
+✅ database/ - Tu base de datos comprimida
+
+✅ workflows/ - Tus workflows
+
+Para restaurar si se daña el disco:
+
+Instalar n8n nuevo
+
+Descargar de GitHub:
+
+config/key_[timestamp].txt
+
+database/backup_[timestamp].sqlite.b64
+
+Restaurar:
+
+export N8N_ENCRYPTION_KEY="[contenido del archivo key]"
+base64 -d backup_[timestamp].sqlite.b64 | gunzip > ~/.n8n/database.sqlite
+
+Copy
+bash
+Iniciar n8n
+
+¡LISTO! Respaldo completo automático cada 24 horas.
+
+Recuperas TODO: workflows, credenciales, configuración, historial.
